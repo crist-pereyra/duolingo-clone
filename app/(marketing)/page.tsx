@@ -21,7 +21,7 @@ export default function Home() {
         <h1 className='max-w-[480px] text-center text-xl font-bold text-neutral-600 lg:text-3xl'>
           Learn, practice, and master new languages with Lingo.
         </h1>
-        <div>
+        <div className='flex w-full max-w-[330px] flex-col items-center gap-y-3'>
           <ClerkLoading>
             <Loader className='size-5 animate-spin text-muted-foreground' />
           </ClerkLoading>
@@ -33,11 +33,7 @@ export default function Home() {
                 </Button>
               </SignUpButton>
               <SignInButton mode='modal'>
-                <Button
-                  size='lg'
-                  variant='primaryOutline'
-                  className='mt-2 w-full'
-                >
+                <Button size='lg' variant='primaryOutline' className='w-full'>
                   I already have an account
                 </Button>
               </SignInButton>
