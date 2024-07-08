@@ -1,4 +1,5 @@
 import { Progress } from '@/components/ui/progress';
+import { useExitModal } from '@/store/exit-modal.store';
 import { InfinityIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
@@ -13,10 +14,11 @@ export const Header = ({
   percentage,
   hasActiveSubscription,
 }: Props) => {
+  const open = useExitModal((state) => state.open);
   return (
     <header className='mx-auto flex w-full max-w-[1140px] items-center justify-between gap-x-7 px-10 pt-[20px] lg:pt-[50px]'>
       <X
-        onClick={() => {}}
+        onClick={open}
         className='cursor-pointer text-slate-500 transition hover:opacity-75'
       />
       <Progress value={percentage} />
