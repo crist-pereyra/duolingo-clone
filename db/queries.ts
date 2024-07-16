@@ -31,10 +31,13 @@ export const getUnits = cache(async () => {
 
   const data = await db.query.units.findMany({
     where: eq(units.courseId, userProgress.activeCourseId),
+    orderBy: (units, { asc }) => [asc(units.order)],
     with: {
       lessons: {
+        orderBy: (lessons, { asc }) => [asc(lessons.order)],
         with: {
           challenges: {
+            orderBy: (challenges, { asc }) => [asc(challenges.order)],
             with: {
               challengeProgress: {
                 where: eq(challengeProgress.userId, userId),
@@ -112,9 +115,7 @@ export const getCourseProgress = cache(async () => {
         return (
           !challenge.challengeProgress ||
           challenge.challengeProgress.length === 0 ||
-          challenge.challengeProgress.some(
-            (progress) => progress.completed === false
-          )
+          challenge.challengeProgress.some((progress) => !progress.completed)
         );
       });
     });
@@ -167,15 +168,13 @@ export const getLesson = cache(async (id?: number) => {
 
 export const getLessonPercentage = cache(async () => {
   const courseProgress = await getCourseProgress();
-  if (!courseProgress?.activeLessonId) {
-    return 0;
-  }
+
+  if (!courseProgress?.activeLessonId) return 0;
 
   const lesson = await getLesson(courseProgress?.activeLessonId);
 
-  if (!lesson) {
-    return 0;
-  }
+  if (!lesson) return 0;
+
   const completedChallenges = lesson.challenges.filter(
     (challenge) => challenge.completed
   );
@@ -183,5 +182,6 @@ export const getLessonPercentage = cache(async () => {
   const percentage = Math.round(
     (completedChallenges.length / lesson.challenges.length) * 100
   );
+
   return percentage;
 });
