@@ -161,6 +161,30 @@ const main = async () => {
         audioSrc: '/es_robot.mp3',
       },
     ]);
+
+    await db.insert(schema.challenges).values([
+      {
+        id: 4,
+        lessonId: 2,
+        type: 'SELECT',
+        question: 'Which one of these is the "the man"?',
+        order: 1,
+      },
+      {
+        id: 5,
+        lessonId: 2,
+        type: 'ASSIST',
+        question: '"the man"',
+        order: 2,
+      },
+      {
+        id: 6,
+        lessonId: 2,
+        type: 'SELECT',
+        question: 'Which one of these is the "the robot"?',
+        order: 3,
+      },
+    ]);
     console.log('Seeding finished!');
   } catch (error) {
     console.error(error);
