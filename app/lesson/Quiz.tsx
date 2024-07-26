@@ -1,6 +1,6 @@
 'use client';
 
-import { challengeOptions, challenges } from '@/db/schema';
+import { challengeOptions, challenges, userSubscription } from '@/db/schema';
 import { useState, useTransition } from 'react';
 import Confetti from 'react-confetti';
 import { Header } from './Header';
@@ -25,7 +25,11 @@ interface Props {
     completed: boolean;
     challengeOptions: (typeof challengeOptions.$inferSelect)[];
   })[];
-  userSubscription: any;
+  userSubscription:
+    | (typeof userSubscription.$inferSelect & {
+        isActive: boolean;
+      })
+    | null;
 }
 export const Quiz = ({
   initialPercentage,

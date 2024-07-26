@@ -31,8 +31,8 @@ export const getUnits = cache(async () => {
   }
 
   const data = await db.query.units.findMany({
-    where: eq(units.courseId, userProgress.activeCourseId),
     orderBy: (units, { asc }) => [asc(units.order)],
+    where: eq(units.courseId, userProgress.activeCourseId),
     with: {
       lessons: {
         orderBy: (lessons, { asc }) => [asc(lessons.order)],
@@ -77,6 +77,16 @@ export const getCourses = cache(async () => {
 export const getCourseById = cache(async (courseId: number) => {
   const data = await db.query.courses.findFirst({
     where: eq(courses.id, courseId),
+    with: {
+      units: {
+        orderBy: (units, { asc }) => [asc(units.order)],
+        with: {
+          lessons: {
+            orderBy: (lessons, { asc }) => [asc(lessons.order)],
+          },
+        },
+      },
+    },
   });
 
   return data;
@@ -111,7 +121,6 @@ export const getCourseProgress = cache(async () => {
   const firstUncompletedLesson = unitsInActiveCourse
     .flatMap((unit) => unit.lessons)
     .find((lesson) => {
-      // TODO: If something doesn't work, remove the last if clause
       return lesson.challenges.some((challenge) => {
         return (
           !challenge.challengeProgress ||
@@ -157,7 +166,6 @@ export const getLesson = cache(async (id?: number) => {
     return null;
   }
   const normalizedChallenges = data.challenges.map((challenge) => {
-    // TODO: If something doesn't work, remove the last if clause
     const completed =
       challenge.challengeProgress &&
       challenge.challengeProgress.length > 0 &&
@@ -201,4 +209,20 @@ export const getUserSubscription = cache(async () => {
     data.stripeCurrentPeriodEnd?.getTime()! + DAY_IN_MS > Date.now();
 
   return { ...data, isActive: !!isActive };
+});
+
+export const getTopTenUsers = cache(async () => {
+  const { userId } = auth();
+  if (!userId) return [];
+  const data = await db.query.userProgress.findMany({
+    orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
+    limit: 10,
+    columns: {
+      userId: true,
+      userName: true,
+      userImageSrc: true,
+      points: true,
+    },
+  });
+  return data;
 });
