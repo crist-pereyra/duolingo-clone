@@ -1,10 +1,12 @@
 # Lingo 🌟
 
+![Lingo Preview](/public/lingo-preview.png)
+
 ## 🌐 Live Demo
 
-Explore the live demonstration of the project: [nextjs14-lingo]()
+Explore the live demonstration of the project: [nextjs14-lingo](https://duolingo-clone-xi.vercel.app)
 
-Welcome to DuoClone! This is a dynamic, engaging, and feature-packed clone of Duolingo, crafted with the latest and greatest in web development technologies:
+Welcome to Lingo! This is a dynamic, engaging, and feature-packed clone of Duolingo, crafted with the latest and greatest in web development technologies:
 
 ⚡ **Next.js 14** for server-side rendering and static site generation  
 ⚛️ **React with TypeScript** for a robust and scalable frontend  
