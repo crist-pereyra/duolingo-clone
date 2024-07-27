@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: '/lingo-preview.png',
   },
+  themeColor: '#22c55e', // Added themeColor property matching bg-green-500
 };
 
 export default function RootLayout({
