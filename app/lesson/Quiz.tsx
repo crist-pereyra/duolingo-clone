@@ -49,11 +49,12 @@ export const Quiz = ({
   const { width, height } = useWindowSize();
   const router = useRouter();
   const [finishAudio] = useAudio({ src: '/finish.mp3', autoPlay: true });
+  /* eslint-disable no-unused-vars */
   const [correctAudio, _c, correctControls] = useAudio({ src: '/correct.wav' });
   const [incorrectAudio, _i, incorrectControls] = useAudio({
     src: '/incorrect.wav',
   });
-
+  /* eslint-disable no-unused-vars */
   const [pending, startTransition] = useTransition();
 
   const [lessonId] = useState(initialLessonId);

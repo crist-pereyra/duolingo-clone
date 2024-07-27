@@ -28,8 +28,8 @@ export const Card = ({
   status,
   type,
 }: Props) => {
-  const [audio, _, controls] = useAudio({ src: audioSrc || '' });
-  _ && console.log(_);
+  const [audio, _, controls] = useAudio({ src: audioSrc || '' }); // eslint-disable-line no-unused-vars
+
   const handleClick = useCallback(() => {
     if (disabled) return;
     controls.play();
