@@ -52,7 +52,7 @@ Follow these steps to get the project up and running on your local machine.
    npm run dev
 ```
 
-2. Open your browser and navigate to http://localhost:3000 to see Dev Overflow in action!
+2. Open your browser and navigate to http://localhost:3000 to see Lingo in action!
 
 ## 📂 Project Structure
 
