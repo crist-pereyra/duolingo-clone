@@ -8,16 +8,16 @@ Explore the live demonstration of the project: [nextjs14-lingo](https://duolingo
 
 Welcome to Lingo! This is a dynamic, engaging, and feature-packed clone of Duolingo, crafted with the latest and greatest in web development technologies:
 
-⚡ **Next.js 14** for server-side rendering and static site generation  
-⚛️ **React with TypeScript** for a robust and scalable frontend  
-🎨 **Tailwind CSS** for beautiful and customizable UI components  
-🔒 **Clerk** for authentication and user management  
-🛠️ **ESLint and Prettier** for code quality and consistency  
-🖌️ **Shadcn/ui** for UI components  
-📊 **React Admin** for robust admin interfaces  
-🐻 **Zustand** for simple and efficient state management  
-🔄 **Drizzle ORM** for database interactions
-💽 **Neon Database** for data storage and management
+⚡ **Next.js 14** for server-side rendering and static site generation.  
+⚛️ **React with TypeScript** for a robust and scalable frontend.  
+🎨 **Tailwind CSS** for beautiful and customizable UI components.  
+🔒 **Clerk** for authentication and user management.  
+🛠️ **ESLint and Prettier** for code quality and consistency.  
+🖌️ **Shadcn/ui** for UI components.  
+📊 **React Admin** for robust admin interfaces.  
+🐻 **Zustand** for simple and efficient state management.  
+🔄 **Drizzle ORM** for database interactions.
+💽 **Neon Database** for data storage and management.
 
 ## 🚀 Getting Started
 
@@ -96,7 +96,7 @@ lingo/
 
 - **Authentication**: Secure user authentication and management with Clerk.
 - **User Interface**: Beautiful and responsive UI using Shadcn/ui.
-- **Admin Panel**: Manage content and users efficiently with React Admin.
+- **Admin Panel**: Manage content efficiently with React Admin.
 - **State Management**: Simplify state management with Zustand.
 - **Database Interaction**: Robust and flexible ORM with Drizzle.
 - **Modern Styling**: Create stunning designs with Tailwind CSS.

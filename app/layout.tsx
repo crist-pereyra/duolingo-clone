@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Nunito } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   openGraph: {
     images: '/lingo-preview.png',
   },
+};
+export const viewport: Viewport = {
+  themeColor: '#22C55E',
 };
 
 export default function RootLayout({
