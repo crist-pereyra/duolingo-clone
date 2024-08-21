@@ -1,10 +1,11 @@
 # Lingo 🌟
 
-![Lingo Preview](/public/lingo-preview.png)
-
 ## 🌐 Live Demo
 
 Explore the live demonstration of the project: [nextjs14-lingo](https://duolingo-clone-xi.vercel.app)
+
+![Lingo Preview](/public/lingo-preview.png)
+![Lingo Preview 2](/public/lingo-preview-2.png)
 
 Welcome to Lingo! This is a dynamic, engaging, and feature-packed clone of Duolingo, crafted with the latest and greatest in web development technologies:
 
@@ -16,8 +17,8 @@ Welcome to Lingo! This is a dynamic, engaging, and feature-packed clone of Duoli
 🖌️ **Shadcn/ui** for UI components.  
 📊 **React Admin** for robust admin interfaces.  
 🐻 **Zustand** for simple and efficient state management.  
-🔄 **Drizzle ORM** for database interactions.
 💽 **Neon Database** for data storage and management.
+🔄 **Drizzle ORM** for database interactions.
 
 ## 🚀 Getting Started
 
